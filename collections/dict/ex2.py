@@ -18,3 +18,9 @@ for key, value in student_info.items():
     print("----------------------------------------------------")
     print(f"{key.upper()} Information")
     print(value)
+
+    '''
+    cricekt player * 2
+    dictionary -> first name, last name, gender, team, score - [], birthyear
+    add score(single, multiple)
+    '''
