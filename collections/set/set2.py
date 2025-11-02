@@ -2,7 +2,7 @@ setA = {5,10,1,2,3,6,20}
 setB = {2,30,6,20,10,-8}
 
 print(F"Set A = {setA}")
-setA.update([60,-55])
+setA.update({60,-55})
 print(F"Set A = {setA}")
 print(F"Set B = {setB}")
 
