@@ -20,4 +20,10 @@ print(f"First Name = {pranjali.first_name}")
 print(f"Last Name = {pranjali.last_name}")
 print(f"Gender = {pranjali.gender}")
 print(f"Age = {pranjali.age}")
-  
+
+'''
+select date_format("%B",orderDate) as months, 
+concat(round(sum(amount))/1000,"K") from
+orders 
+group by months
+'''
