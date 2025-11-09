@@ -1,4 +1,5 @@
 import cricket_player_class as cpc
+import football_player_class as fpc
 
 virat = cpc.cricket_player("Virat","Kohli",1987,"Male","India")
 
@@ -17,3 +18,10 @@ print(chris)
 
 
 # Try same thing but with football players -> goals
+
+ronaldo = fpc.football_player("Cristiano","Ronaldo",1992,"Male","UK")
+
+ronaldo.add_goals(2)
+ronaldo.add_goals(4,1,0,2)
+
+print(ronaldo)
