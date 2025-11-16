@@ -1,5 +1,5 @@
 # READ FILE FROM SYSTEM
-
+file = None
 try:
     file = open("./file_handling/demo.txt","r")
 
@@ -7,8 +7,12 @@ try:
     # print(file.readlines())
 
     for line in file:
-        print(line)
+        print(line, end="")
 except Exception as e:
     print(e)
 finally:
-    file.close()
+    if(file):
+        file.close()
+        print("Closing file")
+    else:
+        print("File Not Found")
