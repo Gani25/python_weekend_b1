@@ -79,3 +79,30 @@ def get_course_by_id(course_id):
     df = pd.read_sql(query,engine)
 
     return df
+
+def delete_course(course_id):
+    mysql_instance = CreateMySQLEngineInstance()
+
+    engine = mysql_instance.get_engine()
+
+    delete_query = text("delete from course where cid = :cou_id")
+
+    with engine.connect() as connection:
+        connection.execute(delete_query,{"cou_id":course_id})
+
+        connection.commit()
+
+        print(f"Course with id = {course_id} deleted successfully")
+
+
+def update_course(course_id, updated_course_desc, updated_course_name, updated_course_duration):
+    mysql_instance = CreateMySQLEngineInstance()
+
+    engine = mysql_instance.get_engine()
+
+    delete_query = text("update course set name = :cname, description = :cdesc, duration = :cdur where cid = :cou_id")
+
+    with engine.connect() as connection:
+        result = connection.execute(delete_query,{"cname":updated_course_name,"cdur":updated_course_duration, "cdesc":updated_course_desc,"cou_id":course_id})
+        connection.commit()
+        print(f"Updated successfully, Rows affected = {result.rowcount}")
